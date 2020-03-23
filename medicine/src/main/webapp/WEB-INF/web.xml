@@ -1,0 +1,50 @@
+<util:properties id="jdbc" location="classpath:db.properties" xmlns:util="http://www.springframework.org/schema/util"/>
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+      destroy-method="close">
+<property name="driverClassName" value="${jdbc.driverName}"></property>
+<property name="url" value="#{jdbc.url}"></property>
+<property name="username" value="#{jdbc.userName}"></property>
+<property name="password" value="#{jdbc.password}"></property>
+<!-- 设置连接最大数  -->
+<property name="maxActive" value="20"></property>
+<!-- 设置连接池实例化时初始创建的连接数 -->
+<property name="initialSize" value="2"></property>
+</bean>
+
+<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+<!-- 指定db连接参数 -->
+<property name="dataSource" ref="DataSource"></property>
+<!-- 指定hibernate框架参数 -->
+<property name="hibernateProperties">
+    <props>
+        <prop key="hibernate.dialect">
+            org.hibernate.dialect.OracleDialect
+        </prop>
+        <prop key="hibernate.show_sql">
+            true
+        </prop>
+        <prop key="hibernate.format_sql">
+            true
+        </prop>
+    </props>
+</property>
+<!-- 指定hbm映射描述信息 -->
+<property name="mappingLocations">
+    <list>
+        <value>classpath:org/tarena/entity/Cost.hbm.xml</value>
+    </list>
+</property>
+</bean>
+
+        <!-- 开启组件扫描，扫描Action,Service,Dao -->
+<context:component-scan base-package="org.tarena"/>
+
+        <!-- 事务控制 -->
+        <!-- 定义事务管理bean -->
+<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+<property name="sessionFactory" ref="sessionFactory">
+</property>
+</bean>
+
+        <!-- 开启事务注解@Transactional -->
+<tx:annotation-driven transaction-manager="txManager"/>
