@@ -55,16 +55,16 @@
        <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
               <property name="mappingLocations">
                      <list>
-                            <value>classpath:com/zte/medicine/entity/Customer.hbm.xml</value>
-                            <value>classpath:com/zte/medicine/entity/Firm.hbm.xml</value>
-                            <value>classpath:com/zte/medicine/entity/Kind.hbm.xml</value>
-                            <value>classpath:com/zte/medicine/entity/Medicine.hbm.xml</value>
-                            <value>classpath:com/zte/medicine/entity/Power.hbm.xml</value>
-                            <value>classpath:com/zte/medicine/entity/Sale.hbm.xml</value>
-                            <value>classpath:com/zte/medicine/entity/SaleCommentEntity.hbm.xml</value>
-                            <value>classpath:com/zte/medicine/entity/Stock.hbm.xml</value>
-                            <value>classpath:com/zte/medicine/entity/StockComment.hbm.xml</value>
-                            <value>classpath:com/zte/medicine/entity/User.hbm.xml</value>
+                            <value>classpath:TCustomerEntity.hbm.xml</value>
+                            <value>classpath:TFirmEntity.hbm.xml</value>
+                            <value>classpath:TKindEntity.hbm.xml</value>
+                            <value>classpath:TMedicineEntity.hbm.xml</value>
+                            <value>classpath:TPowerEntity.hbm.xml</value>
+                            <value>classpath:TSaleEntity.hbm.xml</value>
+                            <value>classpath:TSaleCommentEntity.hbm.xml</value>
+                            <value>classpath:TStockEntity.hbm.xml</value>
+                            <value>classpath:TStockCommentEntity.hbm.xml</value>
+                            <value>classpath:TUserEntity.hbm.xml</value>
                      </list>
               </property>
               <property name="annotatedClasses">

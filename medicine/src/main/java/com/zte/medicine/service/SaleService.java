@@ -59,4 +59,21 @@ public interface SaleService {
      * @return
      */
     public void modifySaleByNum(Sale sale);
+    /**
+     * 高级索引
+     * @param saleNum 销售编码
+     * @param userId 销售员编码
+     * @param customerCode 客户编码
+     * @param saleDate 销售日期
+     * @param amount1 金额下限
+     * @param amount2 金额上限
+     * @return
+     */
+    public Sale findSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, Double amount2);
+
+    /**
+     * 显示所有销售信息
+     * @return
+     */
+    public Sale findAll();
 }

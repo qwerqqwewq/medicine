@@ -19,6 +19,18 @@ public interface SaleDao {
     public void insertSale(Sale sale);
 
     /**
+     * 高级索引
+     * @param saleNum 销售编码
+     * @param userId 销售员编码
+     * @param customerCode 客户编码
+     * @param saleDate 销售日期
+     * @param amount1 金额下限
+     * @param amount2 金额上限
+     * @return
+     */
+    public Sale selectSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, Double amount2);
+
+    /**
      * 根据销售编码查询销售信息
      * @param num
      * @return
@@ -59,4 +71,10 @@ public interface SaleDao {
      * @return
      */
     public void updateSaleByNum(Sale sale);
+
+    /**
+     * 显示所有销售信息
+     * @return
+     */
+    public Sale selectAll();
 }

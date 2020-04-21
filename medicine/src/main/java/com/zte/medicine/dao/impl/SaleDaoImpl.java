@@ -27,6 +27,43 @@ public class SaleDaoImpl implements SaleDao {
     }
 
     @Override
+    public Sale selectSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, Double amount2) {
+        String hql="select * from t_sale;";
+
+        if (saleNum != null) {
+            String hql1 = "select * from t_sale where SaleNum=" + saleNum + ";";
+            hql = hql+"intersect"+hql1;
+        }
+
+        if (userId != null) {
+            String hql2 = "select * from t_sale where MedicineName=" + userId + ";";
+            hql = hql+"intersect"+hql2;
+        }
+
+        if (customerCode != null) {
+            String hql3 = "select * from t_sale where CustomerCode=" + customerCode + ";";
+            hql = hql+"intersect"+hql3;
+        }
+
+        if (saleDate != null) {
+            String hql4 = "select * from t_sale where SaleDate =" + saleDate + ";";
+            hql = hql+"intersect"+hql4;
+        }
+
+        if (amount1 != null) {
+            String hql5 = "select * from t_sale where Amount>=" + amount1 + ";";
+            hql = hql+"intersect"+hql5;
+        }
+
+        if (amount2 != null) {
+            String hql6 = "select * from t_sale where Amount<=" + amount2 + ";";
+            hql = hql+"intersect"+hql6;
+        }
+
+        return (Sale)sessionFactory.getCurrentSession().createSQLQuery(hql);
+    }
+
+    @Override
     public Sale selectSaleByNum(Integer num) {
         return (Sale)sessionFactory.getCurrentSession().get(Sale.class,num);
     }
@@ -54,5 +91,10 @@ public class SaleDaoImpl implements SaleDao {
     @Override
     public void updateSaleByNum(Sale sale) {
         sessionFactory.getCurrentSession().update(sale);
+    }
+
+    @Override
+    public Sale selectAll() {
+        return (Sale)sessionFactory.getCurrentSession().createSQLQuery("select * from t_sale;");
     }
 }

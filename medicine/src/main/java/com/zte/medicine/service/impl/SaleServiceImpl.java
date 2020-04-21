@@ -54,4 +54,14 @@ public class SaleServiceImpl implements SaleService {
     public void modifySaleByNum(Sale sale) {
         saleDao.updateSaleByNum(sale);
     }
+
+    @Override
+    public Sale findSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, Double amount2) {
+        return saleDao.selectSale(saleNum,userId,customerCode,saleDate,amount1,amount2);
+    }
+
+    @Override
+    public Sale findAll() {
+        return saleDao.selectAll();
+    }
 }

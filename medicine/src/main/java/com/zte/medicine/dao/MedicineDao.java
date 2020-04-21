@@ -24,12 +24,26 @@ public interface MedicineDao {
     public void updateMedicine(Medicine medicine);
 
     /**
-     * 根据药品编码查询
-     * @param code
+     * 高级检索 （该函数参数以编码为主，实际情况可从名称查询代码）
+     * @param code1 药品编码
+     * @param name  药品名称
+     * @param code2 药品类别代码
+     * @param stock1 库存最小值（范围）
+     * @param stock2 库存最大值
+     * @param code3 供应商编码
+     * @param date1 生产日期
+     * @param date2 有效期
      * @return
      */
-    public Medicine selectMedicineByCode(String code);
+    public Medicine advancedSearch(String code1, String name, String code2, Integer stock1, String stock2,String code3, Timestamp date1, Timestamp date2);
 
+    ///**
+    // * 根据药品编码查询
+    // * @param code
+    // * @return
+    // */
+    //public Medicine selectMedicineByCode(String code);
+    //
     /**
      * 根据药品名称查询
      * @param name
@@ -37,33 +51,33 @@ public interface MedicineDao {
      */
     public Medicine selectMedicineByName(String name);
 
-    /**
-     * 根据药品种类代码查询
-     * @param code
-     * @return
-     */
-    public Medicine selectMedicineByKind(String code);
-
-    /**
-     * 根据供应商编码查询
-     * @param code
-     * @return
-     */
-    public Medicine selectMedicineByFirm(String code);
-
-    /**
-     * 根据生产日期查询
-     * @param date
-     * @return
-     */
-    public Medicine selectMedicineByDate(Timestamp date);
-
-    /**
-     * 查询过期药品
-     * @param date
-     * @return
-     */
-    public Medicine selectMedicineByUsefulDate(Timestamp date);
+    ///**
+    // * 根据药品种类代码查询
+    // * @param code
+    // * @return
+    // */
+    //public Medicine selectMedicineByKind(String code);
+    //
+    ///**
+    // * 根据供应商编码查询
+    // * @param code
+    // * @return
+    // */
+    //public Medicine selectMedicineByFirm(String code);
+    //
+    ///**
+    // * 根据生产日期查询
+    // * @param date
+    // * @return
+    // */
+    //public Medicine selectMedicineByDate(Timestamp date);
+    //
+    ///**
+    // * 查询过期药品
+    // * @param date
+    // * @return
+    // */
+    //public Medicine selectMedicineByUsefulDate(Timestamp date);
 
     /**
      * 删除药品

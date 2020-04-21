@@ -43,6 +43,6 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public void deleteCustomerByCode(String code) {
-        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().get(Customer.class,code));
+        sessionFactory.getCurrentSession().delete(sessionFactory.getCurrentSession().createSQLQuery("select * from t_customer where CustomerCode="+code+";"));
     }
 }

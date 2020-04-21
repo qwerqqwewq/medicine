@@ -56,7 +56,7 @@ public class UserAction {
      * @throws InvocationTargetException
      * @throws IllegalAccessException
      */
-    String login( String name, String pwd, Model model)throws InvocationTargetException,IllegalAccessException{
+    String login(HttpServletRequest req,String name, String pwd, Model model)throws InvocationTargetException,IllegalAccessException{
         Map map=new HashMap(50);
         Gson gson =new Gson();
         User user = userService.findByName(name);
@@ -66,10 +66,10 @@ public class UserAction {
                 String a="管理员";
                 if (user.getPowerByPowerId().getPower().equals(a)) {
                     model.addAttribute("user", user);
-                    return "main";
+                    return "管理员界面";
                 }else {
                     model.addAttribute("user", user);
-                    return "video/page";
+                    return "用户界面";
                 }
             }else {
                 map.put("msg","用户名或密码不正确");

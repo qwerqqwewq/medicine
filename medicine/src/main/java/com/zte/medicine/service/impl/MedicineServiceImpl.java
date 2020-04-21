@@ -31,34 +31,44 @@ public class MedicineServiceImpl implements MedicineService {
     }
 
     @Override
-    public Medicine findMedicineByCode(String code) {
-        return medicineDao.selectMedicineByCode(code);
+    public Medicine advancedSearch(String code1, String name, String code2, Integer stock1, String stock2, String code3, Timestamp date1, Timestamp date2) {
+        return medicineDao.advancedSearch(code1,name,code2,stock1,stock2,code3,date1,date2);
     }
 
+    //@Override
+    //public Medicine findMedicineByCode(String code) {
+    //    return medicineDao.selectMedicineByCode(code);
+    //}
+
+    /**
+     * 根据药品名称查找
+     * @param name
+     * @return
+     */
     @Override
     public Medicine findMedicineByName(String name) {
         return medicineDao.selectMedicineByName(name);
     }
 
-    @Override
-    public Medicine findMedicineByKind(String code) {
-        return medicineDao.selectMedicineByKind(code);
-    }
-
-    @Override
-    public Medicine findMedicineByFirm(String code) {
-        return medicineDao.selectMedicineByFirm(code);
-    }
-
-    @Override
-    public Medicine findMedicineByDate(Timestamp date) {
-        return medicineDao.selectMedicineByDate(date);
-    }
-
-    @Override
-    public Medicine findMedicineByUsefulDate(Timestamp date) {
-        return medicineDao.selectMedicineByUsefulDate(date);
-    }
+    //@Override
+    //public Medicine findMedicineByKind(String code) {
+    //    return medicineDao.selectMedicineByKind(code);
+    //}
+    //
+    //@Override
+    //public Medicine findMedicineByFirm(String code) {
+    //    return medicineDao.selectMedicineByFirm(code);
+    //}
+    //
+    //@Override
+    //public Medicine findMedicineByDate(Timestamp date) {
+    //    return medicineDao.selectMedicineByDate(date);
+    //}
+    //
+    //@Override
+    //public Medicine findMedicineByUsefulDate(Timestamp date) {
+    //    return medicineDao.selectMedicineByUsefulDate(date);
+    //}
 
     @Override
     public void removeMedicine(Medicine medicine) {
