@@ -27,7 +27,7 @@ public class SaleDaoImpl implements SaleDao {
     }
 
     @Override
-    public Sale selectSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, Double amount2) {
+    public Sale selectSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, String amount2) {
         String hql="select * from t_sale;";
 
         if (saleNum != null) {

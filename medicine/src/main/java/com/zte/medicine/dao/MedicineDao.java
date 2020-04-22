@@ -37,13 +37,13 @@ public interface MedicineDao {
      */
     public Medicine advancedSearch(String code1, String name, String code2, Integer stock1, String stock2,String code3, Timestamp date1, Timestamp date2);
 
-    ///**
-    // * 根据药品编码查询
-    // * @param code
-    // * @return
-    // */
-    //public Medicine selectMedicineByCode(String code);
-    //
+    /**
+     * 根据药品编码查询
+     * @param code
+     * @return
+     */
+    public Medicine selectMedicineByCode(String code);
+
     /**
      * 根据药品名称查询
      * @param name

@@ -28,7 +28,7 @@ public interface SaleDao {
      * @param amount2 金额上限
      * @return
      */
-    public Sale selectSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, Double amount2);
+    public Sale selectSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, String amount2);
 
     /**
      * 根据销售编码查询销售信息

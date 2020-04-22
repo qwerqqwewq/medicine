@@ -69,7 +69,7 @@ public interface SaleService {
      * @param amount2 金额上限
      * @return
      */
-    public Sale findSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, Double amount2);
+    public Sale findSale(Integer saleNum, Integer userId, String customerCode, Timestamp saleDate, Double amount1, String amount2);
 
     /**
      * 显示所有销售信息

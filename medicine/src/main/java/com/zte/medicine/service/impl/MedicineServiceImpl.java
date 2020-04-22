@@ -35,10 +35,10 @@ public class MedicineServiceImpl implements MedicineService {
         return medicineDao.advancedSearch(code1,name,code2,stock1,stock2,code3,date1,date2);
     }
 
-    //@Override
-    //public Medicine findMedicineByCode(String code) {
-    //    return medicineDao.selectMedicineByCode(code);
-    //}
+    @Override
+    public Medicine findMedicineByCode(String code) {
+        return medicineDao.selectMedicineByCode(code);
+    }
 
     /**
      * 根据药品名称查找

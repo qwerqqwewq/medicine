@@ -80,11 +80,11 @@ public class MedicineDaoImpl implements MedicineDao {
         return (Medicine)sessionFactory.getCurrentSession().createSQLQuery(hql);
     }
 
-    //@Override
-    //public Medicine selectMedicineByCode(String code) {
-    //    return (Medicine)sessionFactory.getCurrentSession().get(Medicine.class,code);
-    //}
-    //
+    @Override
+    public Medicine selectMedicineByCode(String code) {
+        return (Medicine)sessionFactory.getCurrentSession().get(Medicine.class,code);
+    }
+
     @Override
     public Medicine selectMedicineByName(String name) {
         return (Medicine)sessionFactory.getCurrentSession().createSQLQuery("select * from t_medicine where MedicineName="+name+";");
