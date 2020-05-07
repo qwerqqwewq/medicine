@@ -9,6 +9,17 @@
     <file url="file://$PROJECT_DIR$/medicine/src/main/resources/db.properties" charset="GBK" />
     <file url="file://$PROJECT_DIR$/medicine/src/main/resources/hibernate.cfg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/medicine/src/main/webapp/WEB-INF/web.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/StockAdd.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/StockSearch.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/add.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/images" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/jquery.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/list.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/login.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/main.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/main.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/register.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/medicine/web/search.html" charset="GBK" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>
