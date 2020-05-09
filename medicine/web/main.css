@@ -13,11 +13,19 @@ body{
 
 .left {
     width: 12%;
-    height: 1500px;
+    height: 850px;
     background: #767473;
     position: absolute;
     top:65px;
     left:0;
+}
+.right{
+    background: pink;
+    width: 88%;
+    height: 850px;
+    position: absolute;
+    top:65px;
+    right:0;
 }
 
 .nav {
@@ -76,4 +84,43 @@ h1{
     left:0;
     border-bottom: 1px #ccc solid;
     
+}
+.box1 span {
+    position: absolute;
+    right: 100px;
+    top: 22px;
+    cursor: pointer;
+}
+
+.box1 label {
+    position: absolute;
+    right: 150px;
+    top: 20px;
+}
+
+.down {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 200px;
+    height: 120px;
+    border: 2px #ccc solid;
+    border-radius: 3px;
+    background: white;
+    display: none;
+}
+
+.down div {
+    height: 50%;
+    text-align: center;
+}
+
+.down span {
+    height: 100%;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.span {
+    border-bottom: 2px #ccc solid;
 }
