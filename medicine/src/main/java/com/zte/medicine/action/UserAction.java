@@ -25,6 +25,7 @@ import java.util.Map;
  */
 @Controller("UserAction")
 @SessionAttributes("User")
+@RequestMapping("User")
 public class UserAction {
 
     @Autowired
@@ -56,6 +57,7 @@ public class UserAction {
      * @throws InvocationTargetException
      * @throws IllegalAccessException
      */
+    @RequestMapping("/login.do")
     String login(HttpServletRequest req,String name, String pwd, Model model)throws InvocationTargetException,IllegalAccessException{
         Map map=new HashMap(50);
         Gson gson =new Gson();
