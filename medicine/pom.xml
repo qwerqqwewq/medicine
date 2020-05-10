@@ -147,20 +147,20 @@
   <build>
     <plugins>
       <!--tomcat7插件  start-->
-      <plugin>
+      <!--<plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <configuration>
           <path>/online</path>
           <port>80</port>
           <uriEncoding>utf-8</uriEncoding>
-          <!--<staticContextPath>/online/p</staticContextPath>-->
-          <!--<staticContextDocbase>D:\Program Files (x86)\3DHGAME\videos</staticContextDocbase>-->
+          &lt;!&ndash;<staticContextPath>/online/p</staticContextPath>&ndash;&gt;
+          &lt;!&ndash;<staticContextDocbase>D:\Program Files (x86)\3DHGAME\videos</staticContextDocbase>&ndash;&gt;
 
 
         </configuration>
 
-      </plugin>
+      </plugin>-->
       <!--tomcat7插件  end-->
 
       <plugin>

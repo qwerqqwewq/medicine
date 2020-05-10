@@ -4,8 +4,25 @@
     <data-source source="LOCAL" name="medicine@localhost" uuid="05ee3cce-2b9f-45ba-a496-ec755e12aba3">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/medicine</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="dataSource" uuid="376b79f3-5385-48f1-94ee-2ec3e7348d5b">
+      <imported>true</imported>
+      <remarks>c3p0
+
+C:/Users/pj19980729/Desktop/毕设/基于ssh的医药管理系统/medicine/src/main/resources/applicationContext.xml</remarks>
+      <jdbc-driver>com.mysql.jdbc.Medicine</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/medicine?useUnicode=true&amp;characterEncoding=utf8</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="db" uuid="02a8619d-e31a-4bfe-9bb9-a8311dee7447">
+      <imported>true</imported>
+      <configured-by-url>true</configured-by-url>
+      <remarks>jdbc.properties
+
+C:/Users/pj19980729/Desktop/毕设/基于ssh的医药管理系统/medicine/src/main/resources/db.properties</remarks>
+      <jdbc-driver>com.mysql.jdbc.Medicine</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/medicine?useUnicode=true&amp;characterEncoding=utf8</jdbc-url>
     </data-source>
   </component>
 </project>

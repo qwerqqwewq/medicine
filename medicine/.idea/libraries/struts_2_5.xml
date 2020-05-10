@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="struts-2.5">
+    <CLASSES>
+      <root url="file://$MAVEN_REPOSITORY$/org/apache/struts-2.5.22" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
