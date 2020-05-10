@@ -9,11 +9,14 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,8 +24,9 @@ import java.util.Map;
  * Date:2020-02-28 12:54
  * Description:<描述>
  */
-@Controller("MedicineAction")
-@SessionAttributes("Medicine")
+@Controller
+@RequestMapping("/medicine")
+@SessionAttributes("medicine")
 public class MedicineAction {
 
     @Autowired
@@ -37,6 +41,7 @@ public class MedicineAction {
      * @return
      * @throws Exception
      */
+    @RequestMapping("/add")
     public String add(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
         Map map = new HashMap(50);
         Gson gson =new Gson();
@@ -70,6 +75,7 @@ public class MedicineAction {
      * @return
      * @throws Exception
      */
+    @RequestMapping("/update")
     public String updateMedicine(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
         Map map = new HashMap(50);
         Gson gson =new Gson();
@@ -103,6 +109,7 @@ public class MedicineAction {
      * @return
      * @throws Exception
      */
+    @RequestMapping("/delete")
     public String deleteMedicine(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
         Map map = new HashMap(50);
         Gson gson =new Gson();
@@ -132,19 +139,18 @@ public class MedicineAction {
      * 初级查询（只能根据药品名称查询）
      * @param mapping
      * @param form
-     * @param request
-     * @param response
      * @return
      * @throws Exception
      */
-    public ActionForward search(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    @RequestMapping("/search")
+    public ActionForward search(ActionMapping mapping, ActionForm form, HttpServletRequest request, Model model) throws Exception {
         Map map = new HashMap(50);
         Gson gson =new Gson();
         MedicineForm medicineForm = (MedicineForm)form;
-        Medicine medicine = new Medicine();
+
         if (medicineService.findMedicineByName(medicineForm.getMedicineName()) != null) {
-            medicine = medicineService.findMedicineByName(medicineForm.getMedicineName());
-            request.setAttribute("medicine",medicine);
+            List<Medicine> medicines = medicineService.findMedicineByName(medicineForm.getMedicineName());
+            model.addAttribute("medicines", medicines);
             return mapping.findForward("success");
         } else {
             return mapping.findForward("fail");
@@ -157,17 +163,16 @@ public class MedicineAction {
      * @param mapping
      * @param form
      * @param request
-     * @param response
      * @return
      * @throws Exception
      */
-    public ActionForward advancedSearch(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    @RequestMapping("/advancedSearch")
+    public ActionForward advancedSearch(ActionMapping mapping, ActionForm form, HttpServletRequest request, Model model) throws Exception {
         String stock =  request.getParameter("stock2");
         MedicineForm medicineForm = (MedicineForm) form;
-        Medicine medicine = new Medicine();
         if (medicineForm!=null) {
-            medicine = medicineService.advancedSearch(medicineForm.getMedicineCode(), medicineForm.getMedicineName(), medicineForm.getKindCode(), medicineForm.getStock(), stock, medicineForm.getFirmCode(), medicineForm.getFirstDate(), medicineForm.getUsefullDate());
-            request.setAttribute("medicine",medicine);
+            List<Medicine> medicines = medicineService.advancedSearch(medicineForm.getMedicineCode(), medicineForm.getMedicineName(), medicineForm.getKindCode(), medicineForm.getStock(), stock, medicineForm.getFirmCode(), medicineForm.getFirstDate(), medicineForm.getUsefullDate());
+            model.addAttribute("medicines",medicines);
             return mapping.findForward("success");
         } else {
             return mapping.findForward("fail");

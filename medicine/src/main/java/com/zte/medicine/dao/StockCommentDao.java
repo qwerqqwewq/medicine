@@ -2,6 +2,8 @@ package com.zte.medicine.dao;
 
 import com.zte.medicine.entity.StockComment;
 
+import java.util.List;
+
 /**
  * @Author:helloboy
  * Date:2020-02-28 10:48
@@ -20,7 +22,7 @@ public interface StockCommentDao {
      * 查询所有的库存信息
      * @return
      */
-    public StockComment selectStockCommentAll();
+    public List<StockComment> selectStockCommentAll();
 
     /**
      * 根据操作编码查询

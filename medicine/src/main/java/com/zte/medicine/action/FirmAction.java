@@ -6,6 +6,9 @@ import com.zte.medicine.form.FirmForm;
 import com.zte.medicine.service.FirmService;
 import org.apache.struts.action.ActionForm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -16,6 +19,9 @@ import java.util.Map;
  * Date:2020-02-28 12:53
  * Description:<描述>
  */
+@Controller
+@RequestMapping("/firm")
+@SessionAttributes("firm")
 public class FirmAction {
     @Autowired
     private FirmService firmService;
@@ -27,7 +33,8 @@ public class FirmAction {
      * @return
      * @throws Exception
      */
-    public String addCustomer(ActionForm form, HttpServletRequest request)throws Exception{
+    @RequestMapping("/add")
+    public String addFirm(ActionForm form, HttpServletRequest request)throws Exception{
 
         Map map = new HashMap(50);
         Gson gson =new Gson();
@@ -61,7 +68,8 @@ public class FirmAction {
      * @return
      * @throws Exception
      */
-    public String updateCustomer(ActionForm form, HttpServletRequest request)throws Exception{
+    @RequestMapping("/update")
+    public String updateFirm(ActionForm form, HttpServletRequest request)throws Exception{
         Map map = new HashMap(50);
         Gson gson =new Gson();
 
@@ -88,6 +96,7 @@ public class FirmAction {
      * 根据姓名显示供应商信息
      * @param form
      */
+    @RequestMapping("/viewAll")
     public void viewByName(ActionForm form){
         FirmForm firmForm = (FirmForm)form;
         firmService.findFirmByName(firmForm.getFirmName());

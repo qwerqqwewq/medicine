@@ -79,7 +79,7 @@
 <div>
   <h1>欢迎使用医药管理系统</h1>
 </div>
-<form method="post" action="${pageContext.request.contextPath}/User/login.do" id="log">
+<form method="post" action="${pageContext.request.contextPath}/user/login.do" id="log">
   <div class="all">
   <div>
   <span>账号</span>

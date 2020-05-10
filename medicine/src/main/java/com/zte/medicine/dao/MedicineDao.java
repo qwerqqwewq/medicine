@@ -3,6 +3,7 @@ package com.zte.medicine.dao;
 import com.zte.medicine.entity.Medicine;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @Author:helloboy
@@ -35,7 +36,7 @@ public interface MedicineDao {
      * @param date2 有效期
      * @return
      */
-    public Medicine advancedSearch(String code1, String name, String code2, Integer stock1, String stock2,String code3, Timestamp date1, Timestamp date2);
+    public List<Medicine> advancedSearch(String code1, String name, String code2, Integer stock1, String stock2, String code3, Timestamp date1, Timestamp date2);
 
     /**
      * 根据药品编码查询
@@ -49,7 +50,7 @@ public interface MedicineDao {
      * @param name
      * @return
      */
-    public Medicine selectMedicineByName(String name);
+    public List<Medicine> selectMedicineByName(String name);
 
     ///**
     // * 根据药品种类代码查询

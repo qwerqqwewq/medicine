@@ -3,6 +3,7 @@ package com.zte.medicine.dao;
 import com.zte.medicine.entity.Stock;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @Author:helloboy
@@ -17,6 +18,12 @@ public interface StockDao {
      * @return
      */
     public void insertStock(Stock stock);
+
+    /**
+     * 显示全部库存信息（略）
+     * @return
+     */
+    public List<Stock> selectAll();
 
     /**
      * 根据操作编码查询

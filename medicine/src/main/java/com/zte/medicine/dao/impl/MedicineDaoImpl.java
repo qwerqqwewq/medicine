@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @Author:helloboy
@@ -32,7 +33,7 @@ public class MedicineDaoImpl implements MedicineDao {
     }
 
     @Override
-    public Medicine advancedSearch(String code1, String name, String code2, Integer stock1,String stock2, String code3, Timestamp date1, Timestamp date2) {
+    public List<Medicine> advancedSearch(String code1, String name, String code2, Integer stock1, String stock2, String code3, Timestamp date1, Timestamp date2) {
         String hql="select * from t_medicine;";
 
         if (code1 != null) {
@@ -77,17 +78,17 @@ public class MedicineDaoImpl implements MedicineDao {
 
 
 
-        return (Medicine)sessionFactory.getCurrentSession().createSQLQuery(hql);
+        return (List<Medicine>)sessionFactory.getCurrentSession().createSQLQuery(hql);
     }
 
     @Override
     public Medicine selectMedicineByCode(String code) {
-        return (Medicine)sessionFactory.getCurrentSession().get(Medicine.class,code);
+        return (Medicine) sessionFactory.getCurrentSession().createSQLQuery("select * from t_medicine where MedicineCode like '%"+code+"%';");
     }
 
     @Override
-    public Medicine selectMedicineByName(String name) {
-        return (Medicine)sessionFactory.getCurrentSession().createSQLQuery("select * from t_medicine where MedicineName="+name+";");
+    public List<Medicine> selectMedicineByName(String name) {
+        return (List<Medicine>)sessionFactory.getCurrentSession().createSQLQuery("select * from t_medicine where MedicineName like '%"+name+"%';");
     }
 
     //@Override

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author:helloboy
@@ -26,8 +27,8 @@ public class StockCommentDaoImpl implements StockCommentDao {
     }
 
     @Override
-    public StockComment selectStockCommentAll() {
-        return (StockComment)sessionFactory.getCurrentSession().createSQLQuery("select * from t_stock_comment;");
+    public List<StockComment> selectStockCommentAll() {
+        return (List<StockComment>)sessionFactory.getCurrentSession().createSQLQuery("select * from t_stock_comment;");
     }
 
     @Override

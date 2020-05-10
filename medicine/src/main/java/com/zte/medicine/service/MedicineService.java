@@ -3,6 +3,7 @@ package com.zte.medicine.service;
 import com.zte.medicine.entity.Medicine;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @Author:helloboy
@@ -34,7 +35,7 @@ public interface MedicineService {
      * @param date2 有效期
      * @return
      */
-    public Medicine advancedSearch(String code1, String name, String code2, Integer stock1, String stock2, String code3, Timestamp date1, Timestamp date2);
+    public List<Medicine> advancedSearch(String code1, String name, String code2, Integer stock1, String stock2, String code3, Timestamp date1, Timestamp date2);
 
     /**
      * 根据药品编码查询
@@ -48,35 +49,35 @@ public interface MedicineService {
      * @param name
      * @return
      */
-    public Medicine findMedicineByName(String name);
+    public List<Medicine> findMedicineByName(String name);
 
     ///**
     // * 根据药品种类代码查询
     // * @param code
     // * @return
     // */
-    //public Medicine findMedicineByKind(String code);
+    //public Medicine selectMedicineByKind(String code);
     //
     ///**
     // * 根据供应商编码查询
     // * @param code
     // * @return
     // */
-    //public Medicine findMedicineByFirm(String code);
+    //public Medicine selectMedicineByFirm(String code);
     //
     ///**
     // * 根据生产日期查询
     // * @param date
     // * @return
     // */
-    //public Medicine findMedicineByDate(Timestamp date);
+    //public Medicine selectMedicineByDate(Timestamp date);
     //
     ///**
     // * 查询过期药品
     // * @param date
     // * @return
     // */
-    //public Medicine findMedicineByUsefulDate(Timestamp date);
+    //public Medicine selectMedicineByUsefulDate(Timestamp date);
 
     /**
      * 删除药品

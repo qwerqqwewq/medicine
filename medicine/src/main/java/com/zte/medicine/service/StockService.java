@@ -3,6 +3,7 @@ package com.zte.medicine.service;
 import com.zte.medicine.entity.Stock;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @author:helloboy
@@ -16,6 +17,12 @@ public interface StockService {
      * @return
      */
     public void addStock(Stock stock);
+
+    /**
+     * 显示全部库存信息（略）
+     * @return
+     */
+    public List<Stock> selectAll();
 
     /**
      * 根据操作编码查询

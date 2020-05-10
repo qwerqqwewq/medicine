@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @Author:helloboy
@@ -23,6 +24,11 @@ public class StockServiceImpl implements StockService {
     @Override
     public void addStock(Stock stock) {
         stockDao.insertStock(stock);
+    }
+
+    @Override
+    public List<Stock> selectAll() {
+        return stockDao.selectAll();
     }
 
     @Override

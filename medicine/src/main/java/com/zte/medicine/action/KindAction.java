@@ -7,6 +7,9 @@ import com.zte.medicine.service.KindService;
 import com.zte.medicine.service.impl.KindServiceImpl;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,8 +21,12 @@ import java.util.Map;
  * Date:2020-02-28 12:55
  * Description:<描述>
  */
+@Controller
+@RequestMapping("kind")
+@SessionAttributes("/kind")
 public class KindAction {
 
+    @RequestMapping("/add")
     public String add(ActionMapping mapping, ActionForm form,
                              HttpServletRequest request, HttpServletResponse response)
             throws Exception {

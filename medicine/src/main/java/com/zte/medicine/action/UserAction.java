@@ -23,9 +23,9 @@ import java.util.Map;
  * Date:2020-02-28 12:53
  * Description:<描述>
  */
-@Controller("UserAction")
-@SessionAttributes("User")
-@RequestMapping("User")
+@Controller
+@SessionAttributes("user")
+@RequestMapping("/user")
 public class UserAction {
 
     @Autowired
@@ -111,7 +111,7 @@ public class UserAction {
             if (name!=null) {
                 if (userService.findByName(name) == null) {
                     userService.addUser(user);
-                    return "regist/success";
+                    return "login.jsp";
                 } else {
                     map.put("msg", "该用户名已存在");
                 }

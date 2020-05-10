@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @Author:helloboy
@@ -24,6 +25,11 @@ public class StockDaoImpl implements StockDao {
     @Override
     public void insertStock(Stock stock) {
         sessionFactory.getCurrentSession().save(stock);
+    }
+
+    @Override
+    public List<Stock> selectAll() {
+        return (List<Stock>)sessionFactory.getCurrentSession().createSQLQuery("select * from t_stock;");
     }
 
     @Override

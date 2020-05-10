@@ -9,6 +9,8 @@ import org.apache.struts.action.ActionForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -21,6 +23,8 @@ import java.util.Map;
  */
 @Controller("CustomerAction")
 @Scope("prototype")
+@RequestMapping("/customer")
+@SessionAttributes("customer")
 public class CustomerAction extends ActionSupport {
 
     @Autowired
@@ -33,6 +37,7 @@ public class CustomerAction extends ActionSupport {
      * @return
      * @throws Exception
      */
+    @RequestMapping("/add")
     public String addCustomer(ActionForm form, HttpServletRequest request)throws Exception{
 
         Map map = new HashMap(50);
@@ -66,6 +71,7 @@ public class CustomerAction extends ActionSupport {
      * @return
      * @throws Exception
      */
+    @RequestMapping("/update")
     public String updateCustomer(ActionForm form,HttpServletRequest request)throws Exception{
         Map map = new HashMap(50);
         Gson gson =new Gson();
@@ -92,6 +98,7 @@ public class CustomerAction extends ActionSupport {
      * 根据姓名显示客户信息
      * @param form
      */
+    @RequestMapping("/viewAll")
     public void viewByName(ActionForm form){
         CustomerForm customerForm = (CustomerForm)form;
         customerService.findCustomerByName(customerForm.getCustomerName());

@@ -10,6 +10,9 @@ import com.zte.medicine.service.StockService;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +25,9 @@ import java.util.Map;
  * Date:2020-02-28 12:53
  * Description:<描述>
  */
+@Controller
+@RequestMapping("/stock")
+@SessionAttributes("stock")
 public class StockAction {
     @Autowired
     private StockService stockService;
@@ -47,6 +53,7 @@ public class StockAction {
      * @return
      * @throws Exception
      */
+    @RequestMapping("/add")
     public String add(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
         Map map = new HashMap(50);
         Gson gson =new Gson();
