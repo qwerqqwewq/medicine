@@ -41,7 +41,7 @@ public class MedicineDaoImpl implements MedicineDao {
         }
 
         if (name != null) {
-            String hql2 = "select * from t_medicine where MedicineName=" + name + ";";
+            String hql2 = "select * from t_medicine where MedicineName like'%" + name + "%';";
             hql = hql+"intersect"+hql2;
         }
 

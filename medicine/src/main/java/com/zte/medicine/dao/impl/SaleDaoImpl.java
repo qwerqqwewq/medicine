@@ -36,7 +36,7 @@ public class SaleDaoImpl implements SaleDao {
         }
 
         if (userId != null) {
-            String hql2 = "select * from t_sale where MedicineName=" + userId + ";";
+            String hql2 = "select * from t_sale where UserId=" + userId + ";";
             hql = hql+"intersect"+hql2;
         }
 
