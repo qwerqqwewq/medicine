@@ -2,6 +2,8 @@ package com.zte.medicine.dao;
 
 import com.zte.medicine.entity.SaleComment;
 
+import java.util.List;
+
 /**
  * @Author:helloboy
  * Date:2020-02-28 10:47
@@ -20,7 +22,7 @@ public interface SaleCommentDao {
      * 查询所有的销售信息（具体）
      * @return
      */
-    public SaleComment selectSaleCommentAll();
+    public List<SaleComment> selectSaleCommentAll();
 
     /**
      * 根据销售编码查询信息

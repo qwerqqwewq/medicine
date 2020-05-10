@@ -82,6 +82,11 @@ public class UserAction {
         return gson.toJson(map);
     }
 
+    @RequestMapping("/login")
+    String loginpage(){
+        return "login/login";
+    }
+
     /**
      * 注册表
      * 1、判断用户输入的两次密码是否一致
@@ -121,11 +126,10 @@ public class UserAction {
 
 
 
-
-
-
-
-
+    @RequestMapping("/regist")
+    String registpage(){
+        return "regist/regist";
+    }
 
 
 

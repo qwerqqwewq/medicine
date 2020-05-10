@@ -79,27 +79,27 @@
 <div>
   <h1>欢迎使用医药管理系统</h1>
 </div>
-<form method="post" action="login">
-<div class="all">
+<form method="post" action="${pageContext.request.contextPath}/User/login.do" id="log">
+  <div class="all">
   <div>
-    <span>账号</span>
+  <span>账号</span>
   </div>
   <div>
-    <input type="text" class="input" placeholder="请输入账号...">
+  <input name="name" type="text" class="input" placeholder="请输入账号...">
   </div>
   <div>
-    <span>密码</span>
+  <span>密码</span>
   </div>
   <div>
-    <input type="password" class="input" placeholder="请输入密码...">
+  <input name="pwd" type="password" class="input" placeholder="请输入密码...">
   </div>
   <div>
-    <input type="submit" value="登陆" class="submit">
-    <a href="register.html" class="register">注册</a>
+  <input type="submit" value="登陆" class="submit">
+  <a href="register.html" class="register">注册</a>
   </div>
 
 
-</div>
-  </form>
+  </div>
+</form>
 </body>
 </html>
