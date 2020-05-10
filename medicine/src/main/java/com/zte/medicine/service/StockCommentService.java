@@ -2,6 +2,8 @@ package com.zte.medicine.service;
 
 import com.zte.medicine.entity.StockComment;
 
+import java.util.List;
+
 /**
  * @Author:helloboy
  * Date:2020-02-07 17:16
@@ -20,7 +22,7 @@ public interface StockCommentService {
      * 查询所有的库存信息
      * @return
      */
-    public StockComment findStockCommentAll();
+    public List<StockComment> findStockCommentAll();
 
     /**
      * 根据操作编码查询

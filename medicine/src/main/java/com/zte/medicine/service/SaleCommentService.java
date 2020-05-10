@@ -2,6 +2,8 @@ package com.zte.medicine.service;
 
 import com.zte.medicine.entity.SaleComment;
 
+import java.util.List;
+
 /**
  * @Author:helloboy
  * Date:2020-02-07 17:15
@@ -19,7 +21,7 @@ public interface SaleCommentService {
      * 查询所有的销售信息（具体）
      * @return
      */
-    public SaleComment findSaleCommentAll();
+    public List<SaleComment> findSaleCommentAll();
 
     /**
      * 根据销售编码查询信息

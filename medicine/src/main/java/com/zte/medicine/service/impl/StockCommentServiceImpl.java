@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @Author:helloboy
  * Date:2020-02-07 17:24
@@ -24,7 +26,7 @@ public class StockCommentServiceImpl implements StockCommentService {
     }
 
     @Override
-    public StockComment findStockCommentAll() {
+    public List<StockComment> findStockCommentAll() {
         return stockCommentDao.selectStockCommentAll();
     }
 
